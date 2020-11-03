@@ -94,6 +94,7 @@ class Eventlite extends React.Component {
     axios({
       method: "POST",
       url: 'http://localhost:3001/events',
+      headers: JSON.parse(localStorage.user),
       data: {
         event: newEvent,
       }
