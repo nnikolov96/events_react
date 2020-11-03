@@ -7,6 +7,7 @@ import FormErrors from './FormErrors'
 import validations from '../validations'
 
 class Eventlite extends React.Component {
+  
   constructor(props) {
     super(props);
     this.state = {
@@ -120,17 +121,20 @@ class Eventlite extends React.Component {
   }
 
   render() {
+    const currentUser = localStorage.getItem("user");
     return (
       <div>
         <FormErrors formErrors={this.state.formErrors} />
-        <EventForm
-          handleSubmit={this.handleSubmit}
-          handleInput={this.handleInput}
-          title={this.state.title.value}
-          start_datetime={this.state.start_datetime.value}
-          location={this.state.location.value}
-          formValid={this.state.formValid}
-        />
+        { currentUser && 
+          <EventForm
+            handleSubmit={this.handleSubmit}
+            handleInput={this.handleInput}
+            title={this.state.title.value}
+            start_datetime={this.state.start_datetime.value}
+            location={this.state.location.value}
+            formValid={this.state.formValid}
+          />
+        }
         <EventList events={this.state.events} />
       </div>
     );
