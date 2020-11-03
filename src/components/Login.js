@@ -21,6 +21,7 @@ class Login extends React.Component {
             'uid': response.data.data.uid
           })
         )
+        window.location = '/'
       })
   }
 
