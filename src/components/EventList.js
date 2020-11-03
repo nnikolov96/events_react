@@ -1,12 +1,10 @@
 import React from 'react';
-import Event from './Event';
+import EventSummary from "./EventSummary";
 
 const EventList = props => (
   <div>
     {props.events.map(function (event) {
-      return (
-        <Event key={event.id} event = {event}/>
-      )
+      return <EventSummary key={event.id} event={event} />;
     })}
   </div>
 )
