@@ -2,6 +2,7 @@ import './App.css';
 import Eventlite from './components/Eventlite'
 import Login from './components/Login'
 import AppHeader from './components/AppHeader'
+import Signup from './components/Signup'
 
 function App() {
 
@@ -13,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <AppHeader />
-      {currentUser() ? <Eventlite /> : <Login />}
+      {currentUser() ? <Eventlite /> : <><Login /> <Signup /></> }
     </div>
   );
 }
