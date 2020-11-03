@@ -3,10 +3,15 @@ import Eventlite from './components/Eventlite'
 import Login from './components/Login'
 
 function App() {
+  
+  const currentUser = function () {
+    const user = localStorage.getItem('user')
+    return (user)
+  }
+
   return (
     <div className="App">
-      <Login />
-      <Eventlite />
+      {currentUser() ? <Eventlite /> : <Login />}
     </div>
   );
 }
